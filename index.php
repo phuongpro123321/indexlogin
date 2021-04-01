@@ -4,7 +4,7 @@ $conn = pg_connect("host=ec2-18-206-20-102.compute-1.amazonaws.com dbname=dcduns
  if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$username = $_POST['username'];
   $password = $_POST['password'];
-    $sql="SELECT * FROM account WHERE username ='$username' and Password='$password'";
+    $sql="SELECT * FROM test WHERE user ='$username' and pass ='$password'";
 	$result = pg_query($conn, $sql);
 if (!$result) {
   echo "An error occurred.\n";
