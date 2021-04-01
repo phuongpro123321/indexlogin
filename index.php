@@ -1,11 +1,5 @@
 <?php	 
- $host = "ec2-18-206-20-102.compute-1.amazonaws.com";
-$port = "5432";
-$dbname = "dcdunsnprbc06j";
-$user = "synxttjivonovb";
-$password = "435e3c81b08bbf01bfbd5c1a498535976a24043baf1af6290f8b06137ef238b7"; 
-$connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ";
-$dbconn = pg_connect($connection_string);
+$conn = pg_connect("host=ec2-18-206-20-102.compute-1.amazonaws.com dbname=dcdunsnprbc06j user=synxttjivonovb password=435e3c81b08bbf01bfbd5c1a498535976a24043baf1af6290f8b06137ef238b7 port=5432");
   	if($conn){echo 'status : connected';}
  if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$username = $_POST['username'];
