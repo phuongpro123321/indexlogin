@@ -9,8 +9,8 @@ $dbconn = pg_connect($connection_string);
   	if($conn){echo 'status : connected';}
  if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$username = $_POST['username'];
-  $password = $_POST['Password'];
-    $sql="SELECT * FROM account WHERE user_name ='$username' and pass='$Password'";
+  $password = $_POST['password'];
+    $sql="SELECT * FROM account WHERE username ='$username' and Password='$password'";
 	$result = pg_query($conn, $sql);
 if (!$result) {
   echo "An error occurred.\n";
@@ -21,13 +21,11 @@ while ($row = pg_fetch_row($result)) {
   echo "name: $row[1]  pass: $row[2]";
   echo "<br />\n";
 }
-	header('Location:chucmung.php');
-	 
-
+	header('Location:chucmung.php');	 
   }else{
 	 echo '\n login status : false';
  }
-}
+
  ?>
 
 <!DOCTYPE html>
