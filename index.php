@@ -1,6 +1,6 @@
 <?php	 
  $conn = pg_connect("host=ec2-18-206-20-102.compute-1.amazonaws.com dbname=dcdunsnprbc06j user=synxttjivonovb password=435e3c81b08bbf01bfbd5c1a498535976a24043baf1af6290f8b06137ef238b7 port=5432");
- if(!$conn){echo "Not Connect";}
+ if(!$conn){echo "Lost Connect";}
  if(isset($_POST['login'])){
 	$username = $_POST['username'];
  	$password = $_POST['password'];
@@ -9,6 +9,7 @@
 	$check = pg_num_rows($result);
 	if($check == 1){
 		echo "Vao dc roi";
+		
 	}
 	else{
 		echo "Ngu vl";
