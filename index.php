@@ -1,4 +1,4 @@
-<<?php
+<?php
 $host = "ec2-18-206-20-102.compute-1.amazonaws.com";
 $port = "5432";
 $dbname = "dcdunsnprbc06j";
@@ -9,7 +9,7 @@ $dbconn = pg_connect($connection_string);
 if(isset($_POST['submit'])&&!empty($_POST['submit'])){
     
     $hashpassword = md5($_POST['Password']);
-    $sql ="select * from public.account where username = '".pg_escape_string($_POST['username'])."' and Password ='".$hashpassword."'";
+    $sql ="select * from account where username = '".pg_escape_string($_POST['username'])."' and Password ='".$hashpassword."'";
     $data = pg_query($dbconn,$sql); 
     $login_check = pg_num_rows($data);
     if($login_check > 0){ 
