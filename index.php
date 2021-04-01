@@ -17,7 +17,7 @@ while ($row = pg_fetch_row($result)) {
 }
 	header('Location:chucmung.php');	 
   }else{
-	 echo '\n login status : false';
+	 echo ' Login status : false';
  }
 
  ?>
